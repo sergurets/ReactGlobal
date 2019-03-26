@@ -1,0 +1,26 @@
+h1 {
+  font-size: 16px;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-size: 12px;
+}
+body {
+  margin: 0;
+  padding: 0;
+
+}
+.App {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: cadetblue;
+  width: 80%;
+  margin: 0;
+}
+  /*
+  .title2 {
+    color: blueviolet;
+  }*/

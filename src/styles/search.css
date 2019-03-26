@@ -1,0 +1,22 @@
+.search_Item {
+    margin: 1%;
+    color: black;
+    /*width: 240px;*/
+    width: 23%;
+  /*  float: right;*/
+    font-size: 16px;
+}
+.search_Item img{
+   /* width: 240px;
+    height: 360px;*/
+    width: 100%;
+    
+}
+.search_results {
+display: flex;
+flex-wrap: wrap;
+}
+
+.search_Item h1{
+    color: black;
+}

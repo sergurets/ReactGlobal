@@ -1,47 +1,83 @@
 import React, { Component } from "react";
+import Item from "./item.js";
+import Header from "./header.js";
+import FullInfo from "./full_info.js";
+import ErrorBoundary from "./error.js";
 
-//React.createElemen
-const Hello1 = <h1>Hello world1!</h1>;
+import '../styles/App.css';
 
-const Hello2 = React.createElement(
-  "h2",
-  { className: "title2" },
-  "Hello World2!"
-);
-//functional component
-function Hello3() {
-  return (
-    <div>
-      <h3>Hello World3!</h3>
-    </div>
-  );
-}
-//React.PureComponent.
-class Message extends React.PureComponent {
-  render() {
-    return <h4> {this.props.title}</h4>;
-  }
-}
-//React.Component
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      className: "App"
+      className: "App",
+      search: true,
+      data: [
+        {
+          budget:null,
+          genres:[],
+          id:null,
+          overview:'',
+          poster_path:null,
+          release_date:"",
+          revenue:null,
+          runtime:null,
+          tagline: null,
+          title:null,
+          vote_average:null,
+          vote_count:null
+        }      
+      ]
     };
+    this.onClick = this.onClick.bind(this);
   }
+
+  getData(value) {
+    var data = !!value ? value.trim() : '';
+    console.log(data)
+    var url = !!data ?
+    `http://react-cdp-api.herokuapp.com/movies?search=${encodeURIComponent(data)}&searchBy=title` :
+    'http://react-cdp-api.herokuapp.com/movies';
+    fetch(url)
+      .then(response => response.json())
+      .then(data => this.setState({ data: data.data }))
+      .then(console.log(this.state.data))
+  }
+
+
+  onClick(value) {
+    this.setState({ value: value })
+    this.getData(value)
+    console.log(value, this)
+  }
+
+  componentDidMount() {
+    this.getData(); 
+  }
+
+  //?search=zoo&searchBy=title
+  
   render() {
+    var firstElement=this.state.data[0];
     return (
-      <div className={this.state.className}>
-        {Hello1}
-        {Hello2}
-        <Hello3 />
-        <Message title="Hello World4!" />
-        <h5>Hello, {this.props.name}!</h5>
+      <div>
+        <ErrorBoundary>
+          <Header onClick = {this.onClick}/>
+        </ErrorBoundary>
+        <h1>Films</h1>
+        {this.state.data.length ? (
+        <div>
+        <Item data={this.state.data}/> 
+        <FullInfo 
+        overview={firstElement.overview} 
+        title={firstElement.title} 
+        release_date={firstElement.release_date}  
+        poster_path={firstElement.poster_path}/>
+        </div>) : <span>NO DATA</span>}
+
       </div>
     );
   }
 }
-
 
 export default App;
