@@ -4,3 +4,20 @@
     color: yellow;
     text-align: center;
 }
+
+.header_content {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+}
+
+.header_content h2{
+    color: red;
+    padding: 10px 0;
+}
+
+.header_content h1{
+    color: white;
+    padding:0;
+}

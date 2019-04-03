@@ -20,11 +20,19 @@ class Search extends React.Component {
      // console.log(this)
       return (
         <div className="search">
-          <h2>search</h2>
           <input type="text" value={this.state.value} onChange={this.handleChange}/>
-          <button onClick={this.onClick}>
-           Search
-          </button>
+          <div className="searchButtons">
+            <button onClick={this.onClick}>
+            Title
+            </button>
+            <button onClick={this.onClick}>
+            Ganre
+            </button>
+            <button onClick={this.onClick}>
+            Search
+            </button>
+          </div>
+
         </div>
       );
     }

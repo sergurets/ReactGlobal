@@ -20,3 +20,10 @@ flex-wrap: wrap;
 .search_Item h1{
     color: black;
 }
+
+.search input {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-bottom: 1px solid red;
+}
