@@ -22,13 +22,18 @@ class Search extends React.Component {
         <div className="search">
           <input type="text" value={this.state.value} onChange={this.handleChange}/>
           <div className="searchButtons">
-            <button onClick={this.onClick}>
-            Title
-            </button>
-            <button onClick={this.onClick}>
-            Ganre
-            </button>
-            <button onClick={this.onClick}>
+            <div className="searchFilter">
+              <span>SEARCH BY</span>
+              <button 
+               onClick={this.onClick}
+               className="active">
+              TITLE
+              </button>
+              <button onClick={this.onClick}>
+              GENRE
+              </button>
+            </div>
+            <button className="mainSearchButton" onClick={this.onClick}>
             Search
             </button>
           </div>

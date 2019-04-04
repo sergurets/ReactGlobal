@@ -11,12 +11,12 @@ h2 {
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 .App {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
   color: cadetblue;
   width: 80%;
   margin: 0;

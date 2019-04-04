@@ -1,5 +1,10 @@
 .release_date {
     border: 1px solid black;
+    width: 30px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .info_title {
     font-size: 12px;

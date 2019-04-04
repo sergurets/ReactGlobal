@@ -71,6 +71,7 @@ class App extends React.Component {
         <FullInfo 
         overview={firstElement.overview} 
         title={firstElement.title} 
+        runtime={firstElement.runtime}
         release_date={firstElement.release_date}  
         poster_path={firstElement.poster_path}/>
         </div>) : <span>NO DATA</span>}

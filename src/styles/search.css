@@ -21,9 +21,46 @@ flex-wrap: wrap;
     color: black;
 }
 
+.search {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .search input {
     background-color: black;
     color: white;
     border: 1px solid black;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #F55263;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 7px;
+}
+
+.searchButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.searchButtons span {
+    color: white;
+    font-size: 12px;
+}
+
+.searchFilter button {
+    margin: 0 5px;
+    background-color: #3C3C3C;
+    color: white;
+    border: none;
+}
+
+.searchFilter button.active {
+    background-color: #F55263; 
+}
+.mainSearchButton {
+    background-color: #F55263; 
+    width: 55px;
+    color: white;
+    border: none;
 }
