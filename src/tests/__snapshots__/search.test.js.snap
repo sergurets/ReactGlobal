@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should render correctly 1`] = `
+<div
+  className="search"
+>
+  <input
+    id="mainSearch"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <div
+    className="searchButtons"
+  >
+    <div
+      className="searchFilter"
+    >
+      <span>
+        SEARCH BY
+      </span>
+      <button
+        className="active"
+        onClick={[Function]}
+      >
+        TITLE
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        GENRE
+      </button>
+    </div>
+    <button
+      className="mainSearchButton"
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>
+</div>
+`;

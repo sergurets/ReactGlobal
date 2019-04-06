@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item should render correctly 1`] = `
+<div
+  className="search_results"
+>
+  <div
+    className="search_Item"
+    key="null"
+    onClick={[Function]}
+  >
+    <img
+      src={null}
+    />
+    <ItemInfo
+      genres={Array []}
+      release_date=""
+      title={null}
+    />
+  </div>
+</div>
+`;

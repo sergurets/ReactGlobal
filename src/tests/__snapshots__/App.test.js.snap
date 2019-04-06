@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemInfo should render correctly 1`] = `
+<div>
+  <ErrorBoundary>
+    <Header
+      onClick={[Function]}
+    />
+  </ErrorBoundary>
+  <h1>
+    Films
+  </h1>
+  <div>
+    <Item
+      data={
+        Array [
+          Object {
+            "budget": null,
+            "genres": Array [],
+            "id": null,
+            "overview": "",
+            "poster_path": null,
+            "release_date": "",
+            "revenue": null,
+            "runtime": null,
+            "tagline": null,
+            "title": null,
+            "vote_average": null,
+            "vote_count": null,
+          },
+        ]
+      }
+    />
+    <FullInfo
+      overview=""
+      poster_path={null}
+      release_date=""
+      runtime={null}
+      title={null}
+    />
+  </div>
+</div>
+`;

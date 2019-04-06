@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`full_info should render correctly 1`] = `
+<div
+  className="full_info"
+>
+  <div
+    className="full_info_controls"
+  >
+    <h2>
+      Netflix search
+    </h2>
+    <button
+      className="searchButton"
+    >
+      Search
+    </button>
+  </div>
+  <div
+    className="full_info_wrapper"
+  >
+    <img />
+    <div
+      className="full_info_content"
+    >
+      <h1 />
+      <div
+        className="content_data"
+      >
+        <span
+          className=""
+        />
+      </div>
+      <p
+        className=""
+      />
+    </div>
+  </div>
+</div>
+`;
