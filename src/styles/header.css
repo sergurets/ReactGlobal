@@ -1,0 +1,23 @@
+.header {
+    background-image: url("https://pbs.twimg.com/profile_banners/844214985756688384/1506973693/1500x500");
+    height: 220px;
+    text-align: center;
+  }
+  
+.header_content {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+.header_content h2 {
+    color: #F55263;
+    padding: 10px 0;
+  }
+  
+.header_content h1 {
+    font-size: 22px;
+    color: white;
+    padding: 0;
+  }
+  
