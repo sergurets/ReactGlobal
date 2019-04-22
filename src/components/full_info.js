@@ -50,7 +50,6 @@ class FullInfo extends React.Component {
     }
 
     render() {
-      console.log(this, this.props.location.pathname.slice(6, -1))
       const release_date = parseFloat(this.state.data.release_date);
       const genres = this.state.data.genres.length ? this.state.data.genres.reduce((sum, current) => {return sum + current + " & "}, '').slice(0,-3) : '';
       return (

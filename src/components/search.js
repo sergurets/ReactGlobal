@@ -71,7 +71,6 @@ class Search extends React.Component {
       } 
 
     render() {
-      console.log('search', this, queryString.parse(this.props.location.search), this.props.location.search)
       var searchByTitle = this.state.queryParam.searchBy === 'title';
       var sortByDate = this.state.queryParam.sortBy === 'release_date';
       return (

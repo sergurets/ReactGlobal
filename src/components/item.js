@@ -18,13 +18,14 @@ class Item extends React.Component {
   }
 
   render() {
-    console.log(this)
     if (this.props.isLoading) {
       return <h3>Loading...</h3>;
     } else if(this.props.hasErrored)  {
       return <h3>Error</h3>;
     } else if(!this.props.data.length) {
       return <h3>No Films Found</h3>;
+    } else if(!this.props.data[0].title){
+        return null
     } else {
       var data = this.props.data;
       if(this.props.currentId) {

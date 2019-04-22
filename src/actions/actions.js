@@ -31,7 +31,6 @@ export function sortItems(items, sortBy) {
 }
 
 export function currentItem(current) {
-    console.log('current', current)
     return {
         type: 'CURRENT',
         current
