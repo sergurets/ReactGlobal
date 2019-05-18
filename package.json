@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "SET NODE_ENV=production&&webpack",
-    "dev": "SET NODE_ENV=development&&webpack-dev-server",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "test": "jest --coverage",
     "cypress": "cypress open"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "enzyme-to-json": "^3.3.5",
     "express": "^4.16.4",
     "identity-obj-proxy": "^3.0.0",
@@ -42,6 +43,7 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./testconfig.js",
+    "testRegex": "tests/.*\\.(js|jsx)$",
     "moduleNameMapper": {
       "^.+\\.css$": "identity-obj-proxy"
     },
