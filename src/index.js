@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux'
-import App from "./components/App.js";
+import {App} from "./App.js";
+import {appConnector} from "./connectors/appConnector.js"
 import { createStore, applyMiddleware } from 'redux';
 
 import thunk from 'redux-thunk';
@@ -20,9 +21,11 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
+const AppConnected = appConnector(App)
+
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+    <AppConnected/>
     </Provider>,
     document.getElementById("root")
 );

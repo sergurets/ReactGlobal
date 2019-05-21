@@ -1,6 +1,5 @@
 import React   from "react";
-import { connect } from 'react-redux'
-import { itemsFetchData, currentItem, sortItems } from '../actions/actions.js';
+import { sortBy, detailedSearch } from '../utilities/urls.js';
 
 import '../styles/search.css';
 
@@ -24,9 +23,7 @@ class Search extends React.Component {
 
       onClick() {
         var data = !!this.state.value ? this.state.value.trim() : '';
-        var url = !!data ?
-        `http://react-cdp-api.herokuapp.com/movies?search=${encodeURIComponent(data)}&searchBy=${this.state.search}&sortBy=${this.state.sortBy}&sortOrder=desc` :
-        `http://react-cdp-api.herokuapp.com/movies?sortBy=${this.state.sortBy}&sortOrder=desc`;
+        var url = !!data ? detailedSearch(data, this.state) : sortBy(this.state.sortBy);
         this.props.fetchData(url);
         this.props.current(null);
       }
@@ -112,24 +109,4 @@ class Search extends React.Component {
     }
   }
   
-//  export default Search;
-
-const mapStateToProps = (state) => {
-  return {
-      total: state.items.total,
-      items: state.items,
-      hasErrored: state.itemsHasError,
-      isLoading: state.itemsIsLoading
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-      fetchData: (url) => dispatch(itemsFetchData(url)),
-      current: (item) => dispatch(currentItem(item)),
-      sortBy: (item, sort) => dispatch(sortItems(item, sort))
-  };
-};
-
-
-export default connect(mapStateToProps,  mapDispatchToProps)(Search);
+export {Search};

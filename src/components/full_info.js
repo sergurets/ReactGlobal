@@ -1,9 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux'
-import { itemsFetchData, currentItem } from '../actions/actions.js';
-
 import '../styles/full_info.css';
-
 
 
 class FullInfo extends React.Component {
@@ -14,7 +10,6 @@ class FullInfo extends React.Component {
 
     onClick() {
       this.props.current(null);
-     // this.props.fetchData();
     }
 
     render() {
@@ -59,19 +54,4 @@ FullInfo.defaultProps = {
 
 };  
 
-const mapStateToProps = (state) => {
-  var {runtime , overview, release_date, title, poster_path, genres,vote_average} = state.current;
-  return {
-    runtime , overview, release_date, title, poster_path, genres, vote_average
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-      fetchData: (url) => dispatch(itemsFetchData(url)),
-      current: (item) => dispatch(currentItem(item))
-  };
-};
-
-
-export default connect(mapStateToProps,  mapDispatchToProps)(FullInfo);
+export {FullInfo};

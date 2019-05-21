@@ -1,7 +1,10 @@
 import React from "react";
-import Search from "./search.js";
+import { Search } from "./search.js";
+import { searchConnector } from "../connectors/searchConnector.js"
 
 import '../styles/header.css';
+
+const SearchConnected = searchConnector(Search)
 
 function Header() {
       return (
@@ -9,10 +12,10 @@ function Header() {
           <div className="header_content">
             <h2>Netflix search</h2>
             <h1>FIND YOUR MOVIE</h1>
-            <Search/>
+            <SearchConnected/>
           </div>
         </div>
       );
   }
   
-  export default Header;
+  export {Header};

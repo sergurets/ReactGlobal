@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import Full_info from '../components/full_info';
+import {Full_info} from '../components/full_info';
 
 const data = [
     {

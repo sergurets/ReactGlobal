@@ -24,4 +24,4 @@ ItemInfo.defaultProps = {
 
 };
 
-export default ItemInfo;
+export {ItemInfo}
