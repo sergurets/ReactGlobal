@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux'
-import App from "./components/App.js";
+import App from "./App.js";
+import {appConnector} from "./connectors/appConnector.js"
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -10,7 +11,9 @@ import rootReducer from './reducers/index.js';
 
 const initialState = {
     current: null,
-    items: {},
+    items: {
+        data: []
+    },
     itemsHasError: false,
     itemsIsLoading: false
 }
@@ -21,10 +24,12 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
+const AppConnected = appConnector(App)
+
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <App />
+            <AppConnected/>
         </BrowserRouter>
     </Provider>,
     document.getElementById("root")
