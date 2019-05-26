@@ -1,0 +1,27 @@
+h1 {
+  font-size: 16px;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  font-size: 12px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.App {
+  margin: 0;
+  padding: 0;
+  color: cadetblue;
+  width: 80%;
+  margin: 0;
+}
+  /*
+  .title2 {
+    color: blueviolet;
+  }*/
