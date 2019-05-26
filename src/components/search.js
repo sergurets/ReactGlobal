@@ -9,9 +9,9 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-         value: '',
+         value:  queryString.parse(props.location.search).search,
          queryParam: Object.assign(
-          {searchBy: 'title' ,
+          {searchBy: 'title',
            sortBy: 'release_date',
            sortOrder: 'desc'},
            queryString.parse(props.location.search)
@@ -28,13 +28,21 @@ class Search extends React.Component {
       }
 
       onClick() {
-        var url = `http://react-cdp-api.herokuapp.com/movies?${queryString.stringify(this.state.queryParam)}`;
-        this.props.fetchData(url);
-        this.props.current(null);
-        this.props.history.push(`/search?${queryString.stringify(this.state.queryParam)}`)
+        const inputValue = !!this.state.value ? this.state.value.trim() : '';
+        this.setState({
+          value: inputValue,
+          queryParam: Object.assign({},this.state.queryParam, {search: encodeURI(inputValue)})},
+          () => {
+            var url = `http://react-cdp-api.herokuapp.com/movies?${queryString.stringify(this.state.queryParam)}`;
+            this.props.fetchData(url);
+            this.props.current(null);
+            this.props.history.push(`/search?${queryString.stringify(this.state.queryParam)}`)
+          }
+        )
+
       }
 
-      componentDidMount(){
+      componentDidMount(){ 
         const url = queryString.stringify(queryString.parse(this.props.location.search));
         url ? this.props.fetchData(`http://react-cdp-api.herokuapp.com/movies?${url}`) : null;
       }

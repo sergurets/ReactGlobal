@@ -7,8 +7,8 @@ module.exports = {
   mode: process.env.NODE_ENV,
 
   output: {
-    filename: 'js/[name].js',
-    path: path.resolve('./public'),
+    path: path.join(__dirname, "/dist"),
+    filename: "index-bundle.js"
   },
 
   resolve: {
